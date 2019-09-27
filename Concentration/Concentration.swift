@@ -46,10 +46,14 @@ class Concentration {
             cards += [card, card]
         }
         // TODO: shuffle the cards
+        shuffleCards(for: cards)
+    }
+    
+    func shuffleCards(for cards: [Card]) {
         for _ in 1...cards.count {
             let randomIndex = Int(arc4random_uniform(UInt32(cards.count)))
-            let card = cards.remove(at: randomIndex)
-            cards.append(card)
+            let card = self.cards.remove(at: randomIndex)
+            self.cards.append(card)
         }
     }
 }

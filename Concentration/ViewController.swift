@@ -58,5 +58,14 @@ class ViewController: UIViewController {
         return emoji[card.identifier] ?? "?"
     }
     
+    @IBAction func newGameTapped(_ sender: UIButton) {
+        for index in game.cards.indices {
+            game.cards[index].isMatched = false
+            game.cards[index].isFaceUp = false
+        }
+        game.shuffleCards(for: game.cards)
+        updateViewFromModel()
+        flipCount = 0
+    }
 }
 
