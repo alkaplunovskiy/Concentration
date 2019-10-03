@@ -151,20 +151,31 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IhY-VD-J9q">
+                                <rect key="frame" x="272" y="820" width="122" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="IhY-VD-J9q" firstAttribute="leading" secondItem="ked-2j-7RU" secondAttribute="trailing" constant="5" id="8IX-lw-gtE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IhY-VD-J9q" secondAttribute="bottom" id="Hrt-Mb-s6Z"/>
+                            <constraint firstItem="IhY-VD-J9q" firstAttribute="height" secondItem="Dq1-j5-iVd" secondAttribute="height" id="W3v-lE-UoT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tlR-AF-Rzd" secondAttribute="trailing" constant="20" id="ZFX-2i-QV5"/>
                             <constraint firstItem="ked-2j-7RU" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="am3-EI-DnL"/>
                             <constraint firstItem="ked-2j-7RU" firstAttribute="top" relation="greaterThanOrEqual" secondItem="tlR-AF-Rzd" secondAttribute="bottom" constant="8" symbolic="YES" id="dVs-2Q-vir"/>
                             <constraint firstItem="tlR-AF-Rzd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="fet-5m-Fvf"/>
                             <constraint firstItem="tlR-AF-Rzd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ldf-q1-Qst"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IhY-VD-J9q" secondAttribute="trailing" constant="20" id="oI6-Bf-Bx0"/>
                             <constraint firstItem="ked-2j-7RU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="q0F-nu-djw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="flipCountLabel" destination="Dq1-j5-iVd" id="H22-pp-dwx"/>
+                        <outlet property="scoreLabel" destination="IhY-VD-J9q" id="Mpb-mO-mAa"/>
                         <outletCollection property="cardButtons" destination="Zjx-SE-iYF" collectionClass="NSMutableArray" id="kse-JZ-VsN"/>
                         <outletCollection property="cardButtons" destination="pvZ-XL-2zX" collectionClass="NSMutableArray" id="Ahx-XN-C9v"/>
                         <outletCollection property="cardButtons" destination="n63-IA-EWm" collectionClass="NSMutableArray" id="35v-JF-cqV"/>

@@ -14,6 +14,10 @@ class Concentration {
     
     private(set) var flipCount = 0
     
+    private(set) var score = 0
+    
+    var alreadyFlipedCards = [Int]()
+    
     private var indexOneAndOnlyFaceUpCard: Int? {
         get {
             var foundIndex: Int?
@@ -43,6 +47,7 @@ class Concentration {
                 if cards[matchIndex].identifier == cards[index].identifier {
                     cards[matchIndex].isMatched = true
                     cards[index].isMatched = true
+                    score += 1
                 }
                 cards[index].isFaceUp = true
             } else {
