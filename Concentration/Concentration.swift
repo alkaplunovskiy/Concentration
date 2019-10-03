@@ -47,13 +47,22 @@ class Concentration {
                 if cards[matchIndex].identifier == cards[index].identifier {
                     cards[matchIndex].isMatched = true
                     cards[index].isMatched = true
-                    score += 1
+                    score += 5
+                    if watchedCardNumber(for: cards[index]) > 4 {
+                        score -= 3
+                    }
                 }
                 cards[index].isFaceUp = true
             } else {
                 indexOneAndOnlyFaceUpCard = index
             }
         }
+        alreadyFlipedCards.append(cards[index].identifier)
+    }
+    
+    private func watchedCardNumber(for card: Card) -> Int {
+        let watchCardNumber = alreadyFlipedCards.filter{ $0 == card.identifier }
+        return watchCardNumber.count
     }
     
     init(numberOfPairsOfCard: Int) {
