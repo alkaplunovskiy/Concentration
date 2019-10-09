@@ -65,13 +65,13 @@ class ViewController: UIViewController {
 
     
     
-    private(set) var emoji = [Int:String]()
+    private(set) var emoji = [Card:String]()
     
     private func emoji(for card: Card) -> String {
-        if emoji[card.identifier] == nil, randomEmojiTheme.count > 0 {
-            emoji[card.identifier] = randomEmojiTheme.remove(at: randomEmojiTheme.count.arc4random)
+        if emoji[card] == nil, randomEmojiTheme.count > 0 {
+            emoji[card] = randomEmojiTheme.remove(at: randomEmojiTheme.count.arc4random)
         }
-        return emoji[card.identifier] ?? "?"
+        return emoji[card] ?? "?"
     }
     
     private func randomTheme(from dictionary: [String: [String]]) -> [String] {

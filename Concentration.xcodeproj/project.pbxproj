@@ -62,8 +62,8 @@
 			children = (
 				865CA146233B973C006A5664 /* AppDelegate.swift */,
 				865CA148233B973C006A5664 /* SceneDelegate.swift */,
-				86958CFB233E4A030039E660 /* Concentration.swift */,
 				86958CFD233E4B950039E660 /* Card.swift */,
+				86958CFB233E4A030039E660 /* Concentration.swift */,
 				865CA14A233B973C006A5664 /* ViewController.swift */,
 				865CA14C233B973C006A5664 /* Main.storyboard */,
 				865CA14F233B973D006A5664 /* Assets.xcassets */,
