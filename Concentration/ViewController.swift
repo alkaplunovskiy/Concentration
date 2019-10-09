@@ -32,11 +32,17 @@ class ViewController: UIViewController {
         return (cardButtons.count + 1) / 2
     }
     
-    @IBOutlet private weak var flipCountLabel: UILabel!
-    
+    @IBOutlet private weak var flipCountLabel: UILabel! {
+        didSet {
+            flipCountLabel.attributedText = attributedString(for: "Flips: \(game.flipCount)")
+        }
+    }
     @IBOutlet private var cardButtons: [UIButton]!
-    
-    @IBOutlet private var scoreLabel: UILabel!
+    @IBOutlet private var scoreLabel: UILabel! {
+        didSet {
+            scoreLabel.attributedText = attributedString(for: "Score: \(game.score)")
+        }
+    }
     
     @IBAction private func touchCard(_ sender: UIButton) {
         if let cardIndex = cardButtons.firstIndex(of: sender) {
@@ -45,6 +51,14 @@ class ViewController: UIViewController {
         } else {
             print("Chosen card is not in the array")
         }
+    }
+    
+    private func attributedString(for string: String) -> NSAttributedString {
+        let attributes: [NSAttributedString.Key: Any] = [
+            .strokeWidth: 5.0,
+            .strokeColor: #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
+        ]
+        return NSAttributedString(string: string, attributes: attributes)
     }
     
     private func updateViewFromModel() {
