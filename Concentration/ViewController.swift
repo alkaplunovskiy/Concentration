@@ -11,15 +11,15 @@ import UIKit
 class ViewController: UIViewController {
 
     private let emojiChoices = [
-        "Halloween": ["👻", "🎃", "😱", "💀", "🍭", "👿"],
-        "Animals": ["🐶", "🐱", "🐭", "🐧", "🐔", "🐷"],
-        "Sports": ["⚽️", "🎾", "🏓", "🎱", "🥊", "🏉"],
-        "Faces": ["😀", "🤪", "😅", "😎", "🥶", "😭"],
-        "Transport": ["🚘", "🚁", "🚑", "✈️", "🚓", "🚋"],
-        "Flags": ["🇨🇦", "🇧🇷", "🇬🇪", "🇺🇦", "🇷🇺", "🇪🇸"]
+        "Halloween": "👻🎃😱💀🍭👿",
+        "Animals": "🐶🐱🐭🐧🐔🐷",
+        "Sports": "⚽️🎾🏓🎱🥊🏉",
+        "Faces": "😀🤪😅😎🥶😭",
+        "Transport": "🚘🚁🚑✈️🚓🚋",
+        "Flags": "🇨🇦🇧🇷🇬🇪🇺🇦🇷🇺🇪🇸"
     ]
     
-    private(set) var randomEmojiTheme: [String]!
+    private(set) var randomEmojiTheme: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,16 +65,17 @@ class ViewController: UIViewController {
 
     
     
-    private(set) var emoji = [Card:String]()
+    private(set) var emoji = [Card: String]()
     
     private func emoji(for card: Card) -> String {
         if emoji[card] == nil, randomEmojiTheme.count > 0 {
-            emoji[card] = randomEmojiTheme.remove(at: randomEmojiTheme.count.arc4random)
+            let randomStringIndex = randomEmojiTheme.index(randomEmojiTheme.startIndex, offsetBy: randomEmojiTheme.count.arc4random)
+            emoji[card] = String(randomEmojiTheme.remove(at: randomStringIndex))
         }
         return emoji[card] ?? "?"
     }
     
-    private func randomTheme(from dictionary: [String: [String]]) -> [String] {
+    private func randomTheme(from dictionary: [String: String]) -> String {
         let emojiChoicesKeys = Array(dictionary.keys)
         let randomKeysNumber = emojiChoicesKeys.count.arc4random
         let randomEmojiTheme = emojiChoicesKeys[randomKeysNumber]
