@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    private let emojiChoices = [
+    private let emojiThemes = [
         "Halloween": "👻🎃😱💀🍭👿",
         "Animals": "🐶🐱🐭🐧🐔🐷",
         "Sports": "⚽️🎾🏓🎱🥊🏉",
@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        randomEmojiTheme = randomTheme(from: emojiChoices)
+        randomEmojiTheme = randomTheme(from: emojiThemes)
     }
     
     private lazy var game = Concentration(numberOfPairsOfCard: numberOfPairsOfCard)
@@ -98,7 +98,7 @@ class ViewController: UIViewController {
     
     @IBAction private func newGameTapped(_ sender: UIButton) {
         game = Concentration(numberOfPairsOfCard: numberOfPairsOfCard)
-        randomEmojiTheme = randomTheme(from: emojiChoices)
+        randomEmojiTheme = randomTheme(from: emojiThemes)
         emoji = [:]
         updateViewFromModel()
     }
